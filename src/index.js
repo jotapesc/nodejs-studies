@@ -2,6 +2,9 @@ const express = require("express");
 
 const app = express();
 
+// Middleware
+app.use(express.json());
+
 const itens = ["Backpack", "Flashlight", "Ration", "Axe"];
 
 //localhost:5000 or any port that i want to use
