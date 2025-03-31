@@ -16,14 +16,18 @@ app.get("/itens", (req, res) => {
   res.json(itens);
 });
 
-app.post("/itens", (req, res) => {
-  res.json(itens.push("Cloth"));
+app.post("/itens/:id", (req, res) => {
+  const { newItem } = req.body;
+  res.json(itens.push(newItem));
 });
 
-app.put("/itens", (req, res) => {
-  res.json(itens[0] = "Backpack+");
+app.put("/itens/:idput", (req, res) => {
+    const { idput } = req.params;
+    const { modItem } = req.body;
+  res.json(itens[idput] = modItem);
 });
 
-app.delete("/itens", (req, res) => {
-    res.json(itens.pop());
+app.delete("/itens/:iddel", (req, res) => {
+    const { iddel } = req.params;
+    res.json(itens.splice(iddel, 1));
 });
