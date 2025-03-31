@@ -14,5 +14,13 @@ app.get("/itens", (req, res) => {
 });
 
 app.post("/itens", (req, res) => {
-  itens.push("Cloth");
+  res.json(itens.push("Cloth"));
+});
+
+app.put("/itens", (req, res) => {
+  res.json(itens[0] = "Backpack+");
+});
+
+app.delete("/itens", (req, res) => {
+    res.json(itens.pop());
 });
