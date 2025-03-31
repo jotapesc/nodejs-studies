@@ -22,12 +22,12 @@ app.post("/itens/:id", (req, res) => {
 });
 
 app.put("/itens/:idput", (req, res) => {
-    const { idput } = req.params;
-    const { modItem } = req.body;
-  res.json(itens[idput] = modItem);
+  const { idput } = req.params;
+  const { modItem } = req.body;
+  res.json((itens[idput] = modItem));
 });
 
 app.delete("/itens/:iddel", (req, res) => {
-    const { iddel } = req.params;
-    res.json(itens.splice(iddel, 1));
+  const { iddel } = req.params;
+  res.json(itens.splice(iddel, 1));
 });
